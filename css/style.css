@@ -1,0 +1,308 @@
+@charset "utf-8";
+@import url(http://fonts.googleapis.com/css?family=Poiret+One);
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@1&family=Noto+Serif+KR:wght@500&display=swap');
+
+/* reset, 브라우저에 의해 적용된 기본 스타일을 무효화하고 다른 부라우저 간에 일관된 기본 스타일을 만들기 위해 사용 */
+* { margin:0;  padding:0;}			/*요소 주변에 기본 간격이 없도록 하여 깔끔하게 만들기 위해 모든 요소의 마진과 패딩을 0으로 설정*/
+ol,ul { list-style: none; }		/*기본 목록 스타일(점이나 숫자)를 제거*/
+a { outline:0; text-decoration:none; color:#555; } /*초점된 상태에서 테두리 제거, 밑줄 제거, 링크의 글자 색상 설정*/
+img { border:0;} /*이미지 요소의 테두리를 제거*/
+body { font:12px/1.6 'Poiret One'; color:#555; } /*페이지 전체 body 요소의 스타일 지정*/
+
+/*레이아웃*/
+header { position:fixed; width:15%; height:100%; background: #009223; /*헤더 화면 고정, 너비는 화면의 15%, 높이는 화면 전체 높이, 배경 색상 설정 */
+		top:0px; left:0px; transition:all 0.5s;} 			/* 헤더를 화면의 좌측 상단에 배치, 모든 속성에 대해 트랜지션 효과 부여 */
+
+nav { position:relative; width:85%; height:40px; background:#FFCA08; /* 네비게이션을 일반적인 문서 흐름에 따라 배치, 너비는 화면의 85%, 높이는 40px, 배경색 노랑 */
+	margin-left:15%; transition:all 0.5s;}	/* 네비게이션을 왼쪽으로 15%만큼 마진주어 헤더와 겹치지 않게, 트랜지션 효과 부여 */
+
+section { position:relative; width:85%; margin-left:15%;}	/* 섹션을 일반적인 문서 흐름에 따라 배치, 너비 설정, 섹션을 왼쪽으로 15%만큼 마진 줌*/
+
+/* Article 스타일 */
+article { float:left; height:260px; transition:all 0.5s; animation:scale 1s 1;}	/* 요소를 왼쪽으로 floating, 높이 설정, 트랜지션 효과 부여, 
+																				scale 키프레임 애니메이션을 1초동안 한번 실행*/
+
+/* Article의 자식 요소 스타일들 설정, 너비와 배경 색상이 각각 지정, 구분하기 위해 */																																								
+article:nth-child(1) { width:60%; height:520px; background:#ddd;}
+article:nth-child(2) { width:40%; background:#ccc;}
+article:nth-child(3) { width:20%; background:#bbb;}
+article:nth-child(4) { width:20%; background:#aaa;}
+article:nth-child(5) { width:20%; background:#999;}
+article:nth-child(6) { width:40%; background:#888;}
+article:nth-child(7) { width:20%; background:#777;}
+article:nth-child(8) { width:20%; background:#666;}
+article:nth-child(9) { width:40%; background:#555;}
+article:nth-child(10) { width:20%;	background:#444;}
+article:nth-child(11) { width:20%; background:#333;}
+article:nth-child(12) { width:20%;	background:#222;}
+
+/* Article에 적용되는 scale 애니메이션, 0~100까지 크기 변화 */
+@keyframes scale {
+	0% { transform:scale(0); }	
+	100% { transform:scale(1); }
+}
+
+/* Article 내부('>')의 div 스타일 */
+article>div { position:relative; width:100%; height:100%; overflow:hidden; cursor:pointer; }	/*문서의 흐름에 배치, 전체 너비와 높이를 가득 채움, 내용이 요소 크기를 넘어가면 가림, 마우스 커서 변경*/
+
+/* header 내의 h1 (logo) 요소 스타일 */
+header h1 { width:200px; height:200px; background:url(../img/logo12.png) no-repeat 0px 0px; background-size:contain; /*h1 요소의 너비와 높이, 배경이미지 반복 없이 좌상단에 배치, 배경 이미지를 요소에 맞게 확대 또는 축소*/
+			position:absolute; top:40px;	left:48%; margin-left:-90px;	text-indent:-99999px; } /*절대위치로 배치, 상단, 좌측의 숫자에 맞게 배치, 왼쪽 마진 설정, 텍스트를 화면 밖으로 숨김*/
+
+/* gnb 스타일 */
+#gnb { position:absolute; top:300px; right:51px;} /* 절대 위치 배치, 상단 우측의 숫자에 맞게 배치*/
+#gnb a { display:block; padding:20px 20px; font-size:20px; font-weight: bold; color: #fff; /*블록 레벨 요소 설정, 상하 좌우 여백 지정, 폰트 크기, 굵기, 색상 설정*/
+		text-align:left; line-height: 1.2; transition:all .5s; font-family: 'IBM Plex Sans KR', sans-serif; 
+ } /*텍스트 왼쪽 정렬, 줄 높이 설정, 트랜지션 효과 부여, 글꼴 설정*/
+
+/* gnb hover 효과 */
+#gnb a:hover { color:#FFCA08}		/* 앵커에 호버가 적용되었을때(a:hover) 색 설정*/
+#gnb a i { margin-right:13px;}		/* 앵커 내의 아이콘(i)에 오른쪽 여백 설정 */					
+
+/* snsSet 스타일 */
+.snsSet { width:90px;	height:47px;	position:absolute; bottom:50px; right:50%; margin-right:-45px;} /* .snsSet 클래스 요소의 너비 높이 설정, 절대 위치 배치, 우측으로부터 떨어진 위치 배치, 우측 마진 설정하여 중앙 정렬*/
+.snsSet a { float:left;} /* .snsSet 클래스 내의 앵커를 왼쪽으로 floating*/
+
+/* nav 링크 스타일 */
+nav a:nth-child(1) {	position:absolute; top:7px;	left:10px;}
+nav a:nth-child(2) {	position:absolute; top:7px;	left:150px;}
+nav a:nth-child(3) {	position:absolute; top:7px;	right:90px;}
+nav a:nth-child(4) {	position:absolute; top:7px;	right:10px;}	/* n번째 자식 요소에 스타일 적용, 각 링크에 절대 위치로 설정, 각각의 위치 지정*/
+
+/* Article 내의 div 스타일 */
+article>div { position:relative; width:100%; height:100%; overflow:hidden; cursor:pointer; } /*문서의 흐름에 따라 배치, 전체 너비와 높이는 가득, 요소 크기를 넘어가면 숨김, 마우스 커서 설정*/
+
+/* 배경이미지 삽입 or 스타일 */
+article .bg1 { background-image:url(../img/pic1.jpg);}
+article .bg2 { background-image:url(../img/pic2.jpg);}
+article .bg3 { background-image:url(../img/pic3.jpg);}
+article .bg4 { background-image:url(../img/pic4.jpg);}
+article .bg5 { background-image:url(../img/pic5.jpg);}
+article .bg6 { background-image:url(../img/pic6.jpg);}
+article .bg7 { background-image:url(../img/pic7.jpg);}	/* 각 article에 배경 이미지 설정, .bg1~7까지 클래스를 각각의 article에 적용하고 배경 이미지 설정 */
+
+/* 이미지박스 스타일 */
+article .bg { background-size:cover; background-position:center center; } /* 배경 이미지 크기를 cover로 설정, 중앙 위치 설정 */
+article .bg span { font-size:60px; color:#fff;	position:absolute; bottom:0px; right:20px; /* 이미지 박스안의 텍스트(span)의 초기 스타일 지정*/
+				transform:scale(10); opacity:0;	transition:all 0.6s; }						/*텍스트 크기, 색상, 초기에는 투명도가 0이고 크기가 10배로 확대(scale)된 상태*/
+article .bg1 span { font-size:170px; font-weight: bold; bottom:-76px; 	               	/* 특정 클래스 .bg1 스타일 정의 ("SUBWAY"), 이 클래스의 이미지 박스에는 초기에 텍스트가 나타나도록 함 (opacity: 1)*/
+				 right:-6px; opacity:1; transform:scale(1); transition:all 0.5s;  }		/* 크기와 위치 등 조정*/
+
+/*이미지박스 호버 효과*/
+article:hover .bg span { opacity:1; transform:scale(1);}		/* article에 호버 되면 .bg span의 효과 적용, 투명도 1이 되고 크기 원래 크기로 축소*/
+article .bg1:hover span { transform:rotateY(360deg); color:#FFCA08; }	/* 특정 클래스 .bg1("SUBWAY")의 article에 호버 되면 .bg1 sapn의 효과가 적용, 3D 회전 효과와 글자 색상 변경*/
+
+/* 텍스트박스 스타일 */
+article .txt { color:#666; background:#fff;  /* 텍스트 박스 초기 스타일(.txt) 지정, 텍스트 색상, 배경색 설정*/
+							box-sizing:border-box; z-index:0; padding:40px 30px; transition:all 1s;}	/* 요소의 크기에 패딩과 테두리 포함, 쌓임 순서 지정, 패딩 설정*/
+article:nth-child(3) .txt { background:#D5D957;}	/* 3번째 article의 텍스트 박스 스타일 설정*/
+article:nth-child(11) .txt { background:#fff;}		/* 11번째 article의 텍스트 박스 스타일 설정*/
+article .txt i { font-size:150px; color:#FFCA08; opacity:0; 										/* 텍스트 박스 내의 아이콘 스타일 설정 (.txt i) 초기 투명도 설정, 오른쪽 하단 위치*/
+				position:absolute; bottom:-20px; right:-220px; transition:all 0.7s;}
+article:nth-child(3) .txt i {	position:absolute; bottom:-20px; right:-15px; font-size:200px;  	/*3번째 article에 해당하는 텍스트 박스 내의 아이콘(.txt i) 스타일 설정*/
+								color:#fff; opacity:0.7; }
+article .txt strong { font-size:30px;	font-weight:bold; line-height:1.6;	color:#444; 		/*텍스트 박스 내의 강조 텍스트(.txt string)에 대한 스타일 설정*/
+					position: relative; margin-bottom:20px; transition:all 1s;}
+
+/*텍스트박스 호버효과*/
+article:hover .txt { background:#FAEDCA;	color:#009223;}	/* article에 호버 되면 배경색과 텍스트 색상 변경 */
+article:hover .txt i { right:0px; opacity:0.3; color: #FFCA08}	/* article에 호버 되면 텍스트 박스 내의 아이콘의 위치 이동, 투명도와 색상 변경*/
+article:hover .txt strong { color:#009223;}	/* article에 호버되면 강조 텍스트 색상 변경 */
+
+/* 미디어 쿼리를 사용하여 화면 너비가 1280px ~ 1599px 사이 일때 화면에 적용되는 스타일 정의*/
+@media screen and (min-width:1280px) and (max-width:1599px) {  
+
+	/* 레이아웃 스타일 */
+	header { position:relative; width:100%; height:80px;}	/* 헤더의 스타일 재정의, 너비와 높이 재설정 */
+	nav { width:100%; margin-left:0%;}		/* 네비의 스타일 재정의, 너비와 마진 왼쪽 재설정 */
+	section { width:100%; margin-left:0px;}	/* 섹션의 스타일 재정의, 너비와 마진 왼쪽 재설정 */
+	
+	/* header 컨텐츠 */
+	header h1 { width:200px; height:200px; background-image:url(../img/logo12.png); /* 헤더 내의 h1 요소 스타일 재정의*/
+							top:-60px; left:30px; margin-left:0px;}			/*너비, 높이, 배경 이미지, 위치, 마진 왼쪽 재정의*/
+	#gnb { top:8px; right:200px;}			/* 네비게이션 바 스타일 재정의, 상단으로부터와 우측으로부터의 위치 재정의 */
+	#gnb li { float:left;}					/* 네비게이션 바 내의 리스트 항목의 스타일 재정의, 왼쪽으로 플로팅*/
+	#gnb a { padding: 20px 30px; font-weight: nomal; font-size: 20px;}			/* 네비게이션 바 내의 링크 스타일 재정의, 패딩, 글자 굵기, 크기 재설정*/	
+	.snsSet { bottom:20px; right:80px;}			/* snsSet 스타일 재정의, 하단으로부터와 우측으로부터의 위치 재정의 */
+}
+
+/* 미디어 쿼리를 사용하여 화면 너비가 1024px ~ 1279px 사이 일때 화면에 적용되는 스타일 정의*/
+@media screen and (min-width:1024px) and (max-width:1279px) {  
+	
+	/* 레이아웃 스타일 */
+	header { position:relative; width:100%; height:80px;}	/* header, nav, section은 너비가 100%로 설정되어 화면 너비에 맞게 조정 */
+	nav { width:100%; margin-left:0%;}			
+	section { width:100%; margin-left:0px;}		
+
+	/* 특정 순서의 article에 대한 너비 설정 */
+	article:nth-child(1) { width:75%;}	
+	article:nth-child(2) { width:25%;}	
+	article:nth-child(3) { width:25%;}	
+	article:nth-child(4) { width:25%;}	
+	article:nth-child(5) { width:25%;}	
+	article:nth-child(6) { width:50%;}	
+	article:nth-child(7) { width:50%;}	
+	article:nth-child(8) { width:25%;}	
+	article:nth-child(9) { width:25%;}	
+	article:nth-child(10) { width:50%;}	
+	article:nth-child(11) { width:25%;}	
+	article:nth-child(12) { width:25%;}
+	
+	/* header 컨텐츠 스타일 */
+	header h1 { width:200px;	height:200px;	background-image:url(../img/logo12.png);	/* header h1 요소 스타일 재정의*/
+				top:-60px;	left:30px;	margin-left:0px;}							/* 너비, 높이, 배경 이미지, 위치, 왼쪽 마진 재설정 */
+	#gnb { top:8px; right:30px;}	/* 네비게이션 바 스타일 재정의, 상단과 우측으로부터의 위치 재설정 */
+	#gnb li { float:left;}	/* 네비게이션 바 내의 리스트 항목의 스타일 재정의, 왼쪽으로 플로팅 */	
+	#gnb a { padding: 20px 30px; font-weight: nomal; font-size: 20px;}		/* 네비게이션 바 내의 링크의 스타일 재정의, 패딩과 글자 굵기, 크기 재설정*/
+	.snsSet {	display:none;}		/* snsSet 스타일 재정의, 해당 요소를 숨김으로써 화면에 나타나지 않음 */
+
+	/*텍스트 박스 색상 변경*/
+	article:nth-child(8) .txt { background:#fce29a; }	/* 8번째 acticle의 텍스트 박스에 대한 배경색 변경 */
+
+}
+
+/* 미디어 쿼리를 사용하여 화면 너비가 780px ~ 1023px 사이일때 화면에 적용되는 스타일 정의 */
+@media screen and (min-width:780px) and (max-width:1023px) {  
+	
+	/* 레이아웃 스타일 */
+	header { position:relative; width:100%; height:80px;}		/* header, nav, section은 너비가 100%로 설정 되어 화면 너비에 맞게 조정 */
+	nav { width:100%; margin-left:0%;}		
+	section { width:100%; margin-left:0px;}		
+
+	/* 특정 순서의 article에 대한 너비와 높이를 설정, article 5, 7, 10, 12 요소 숨김*/
+	article:nth-child(1) { width:100%;	height:400px;}	
+	article:nth-child(2) { width:66.6666%;}	
+	article:nth-child(3) { width:33.3333%;}	
+	article:nth-child(4) { width:33.3333%; }	
+	article:nth-child(5) { width:33.3333%; display:none;}	
+	article:nth-child(6) { width:66.6666%;}	
+	article:nth-child(7) { width:66.6666%; display:none;}	
+	article:nth-child(8) { width:33.3333%;}	
+	article:nth-child(9) { width:33.3333%;}	
+	article:nth-child(10) { width:66.6666%; display:none;}	
+	article:nth-child(11) { width:33.3333%;}	
+	article:nth-child(12) { width:33.3333%; display:none;}
+	
+	/* header 컨텐츠 스타일 */
+	header h1 { width:200px;	height:180px;	background-image:url(../img/logo12.png); 	/* 헤더 내의 h1 요소 스타일 재정의 */
+				top:-51px; left:20px; margin-left:0px;}	/* 너비, 높이, 배경 이미지, 상단과 좌측으로부터의 위치, 마진 왼쪽 재설정 */
+	#gnb { top:7px; right:10px;}	/* 네이게이션 바 스타일 재정의, 상단과 우측으로부터의 위치 재설정 */
+	#gnb li { float:left;}		/* 네비게이션 바 내의 리스트 항목 스타일 재정의, 왼쪽으로 플로팅 */
+	#gnb a { padding:20px 10px; font-weight: nomal; font-size: 20px;}		/* 네비게이션 바 내의 링크의 스타일 재정의, 패딩, 글자 굵기와 크기 재설정 */
+	.snsSet { display:none;}	/* snsSet 스타일 재정의, 해당 요소를 숨김 */
+
+	/* 텍스트 박스 색상 변경, article 6, 8번째 텍스트 박스의 배경색 변경 */
+	article:nth-child(6) .txt { background:#fce29a; }
+	article:nth-child(8) .txt { background:#D5D957; }
+
+}
+
+/* 미디어 쿼리를 사용하여 화면 너비가 640px ~ 779px 사이일때 화면에 적용되는 스타일 정의 */
+@media screen and (min-width:640px) and (max-width:779px) {  
+	
+	/* 레이아웃 스타일 */
+	header { position:relative; width:100%; height:80px;}	/* header, nav, section은 너비가 100%로 설정되어 화면 너비에 맞게 조절됨 */
+	nav { width:100%; margin-left:0%;}		
+	section { width:100%; margin-left:0px;}		
+
+	/* 특정 순서의 article에 대한 너비와 높이를 설정, article 3, 4, 7, 10 요소 숨김*/
+	article:nth-child(1) { width:100%;	height:400px;}
+	article:nth-child(2) { width:100%;}	
+	article:nth-child(3) { width:33.3333%; display:none;}	
+	article:nth-child(4) { width:100%;	display:none;}	
+	article:nth-child(5) { width:50%;}	
+	article:nth-child(6) { width:50%;}	
+	article:nth-child(7) { width:66.6666%; display:none;}	
+	article:nth-child(8) { width:50%;}	
+	article:nth-child(9) { width:50%;}	
+	article:nth-child(10) { width:66.6666%; display:none;}	
+	article:nth-child(11) { width:50%;}	
+	article:nth-child(12) { width:50%;}	
+	
+	/* header 컨텐츠 스타일 */
+	header h1 { width:200px;	height:180px;	background-image:url(../img/logo12.png); /* header 내의 h1 요소 스타일 재정의 */
+				top:-51px; left:15px; margin-left:0px ;}	/* 너비, 높이, 배경이미지, 상단과 좌측으로부터의 위치, 마진 왼쪽 재설정 */
+	#gnb { top:8px; right:-8px;}	/* 네비게이션 바에 대한 스타일 재정의, 상단과 우측으로부터의 위치 재설정 */
+	#gnb li { float:left;}			/* 네비게이션 바 내의 리스트 항목의 스타일 재정의, 왼쪽으로 플로팅 */
+	#gnb a { padding:20px 13px; font-size:18px; }	/* 네비게이션 바 내의 링크에 대한 스타일 재정의, 패딩, 글자 크기 재설정 */
+	.snsSet { display:none;}		/* snsSet에 대한 스타일 재정의, 해당 요소 숨김 */
+
+	/* 텍스트 박스 색상 변경, article 2,8 번째 텍스트 박스 배경색 변경 */
+	article:nth-child(2) .txt { background: #fce29a; }
+	article:nth-child(8) .txt { background: #D5D957; }
+
+	}
+
+/* 미디어 쿼리를 사용하여 화면의 너비가 480px ~ 639px 사이일 때, 화면에 적용되는 스타일 정의 */
+@media screen and (min-width:480px) and (max-width:639px) {  
+	
+	/* 레이아웃 스타일 */
+	header { position:relative; width:100%; height:130px;}	/* header의 너비가 100%으로 설정되어 화면 너비에 맞게 조정, 높이 조정 */
+	nav { width:100%; margin-left:0%;}		/* 네비게이션 바는 숨김 */
+	section { width:100%; margin-left:0px;} /* section 너비가 100%로 설정되어 화면 너비에 맞게 조정 */
+	article { height:150px;}		/*article 높이 조정*/
+
+	/* 특정 순서의 article에 대한 너비와 높이 설정, article 3,4,7,10 요소 숨김 */
+	article:nth-child(1) { width:100%; height:300px;}		
+	article:nth-child(2) { width:100%;}	
+	article:nth-child(3) { width:33.3333%; display:none;}	
+	article:nth-child(4) { width:100%;	display:none;}	
+	article:nth-child(5) { width:50%;}	
+	article:nth-child(6) { width:50%;}	
+	article:nth-child(7) { width:66.6666%; display:none;}	
+	article:nth-child(8) { width:50%;}	
+	article:nth-child(9) { width:50%;}	
+	article:nth-child(10) { width:66.6666%; display:none;}	
+	article:nth-child(11) { width:50%; float: right; }	/* float: right를 주어 article 11,12 순서 바꿈 */
+	article:nth-child(12) { width:50%;}	
+	
+	/* header 컨텐츠 스타일 */
+	header h1 { position:relative; top:-60px; left:0px; width:200px; height:200px;	 /* header 내의 h1 요소에 대한 스타일 재정의 */
+				background-image:url(../img/logo12.png); margin:0px auto;}		/*상단과 좌측으로의 위치, 너비, 높이, 배경 이미지, 마진 재설정*/
+	#gnb { width:100%; height:40px; top:75px; right:0px;}			/* 네비게이션 바에 대한 스타일 재정의, 너비와 높이, 상단과 우측으로부터의 위치 재설정 */
+	#gnb li { float:left; width:25%;}		/* 네비게이션 바 내의 리스트 항목에 대한 스타일 재정의, 왼쪽으로 플로팅, 너비 재설정 */
+	#gnb a { padding: 12px 5px; text-align:center; font-size:16px; }	/* 네비게이션 바 내의 링크에 대한 스타일 재정의, 패딩과 텍스트 정렬과 글자 크기 재설정 */
+	.snsSet { display:none;}	/*snsSet 스타일 재정의, 해당 요소를 숨김*/
+	
+	/* 텍스트 박스 스타일 변경 */
+	article .bg1 span { font-size:120px; bottom:-50px;}	/* 특정 article의 배경 이미지 (.bg1 span) 크기 변경 */
+	article .txt strong { font-size:25px;}	/* 특정 article 내의 강조 텍스트(.txt strong) 크기 변경 */
+	article .txt em { display:none;}		/* 특정 article 내의 강조 텍스트(.txt em) 숨김 */
+
+	/* 텍스트 색상 변경, article 2, 11번째 텍스트 박스의 배경색 변경 */
+	article:nth-child(2) .txt {background:#fce29a;}
+	article:nth-child(11) .txt {background:#D5D957;}
+
+}
+
+/* 미디어 쿼리를 사용하여 화면의 너비가 479px 이하이 때 적용되는 스타일 정의(휴대폰 크기) */
+@media screen and (max-width:479px){
+
+	/* 레이아웃 스타일 */
+	header { position:fixed; width:100%; height:40px; background-color:transparent; z-index:5; } /* header은 너비가 100%, 높이가 40px로 설정되어 화면 상단에 고정, 투명한 배경색 가짐, z-index는 5 */
+	nav { display:none; }	/* 네비게이션 바는 숨김 */
+	section { width:100%; margin-left:0px; z-index:4; } /* section은 너비가 100%, 왼쪽 마진은 0px로 설정되어 화면 너비에 맞게 조정, z-index는 4로 설정 */
+	article { display:none; }	/* 모든 article은 숨김 */
+	body { background: #009223; /*background-image: url(../img/sub2.png); background-size:cover; background-position:center;
+		 background-repeat: no-repeat; height: 100%;*/ }
+
+	/*background: #009223; 녹색 만들기*/
+
+	
+	/*article:nth-child(1) { display:block; position:fixed; width:100%; height:100%; margin-left: 0%;}	/* 첫번째 article은 화면 전체를 차지하며 표시됨 */
+	/*article:nth-child(1) img { width: 100%; height: auto; }*/
+
+
+	/* header 컨텐츠 */
+	header h1 { top:70px; width:300px; height:310px; margin-left:-120px; /* header 내의 h1 요소에 대한 스타일 재정의 */
+				background-image: url(../img/logo123.png);/ }		/*상단과 우측으로부터 위치, 높이, 좌측 마진 재설정 되어 중앙정렬, 배경이미지 재설정 */
+	#gnb { width:240px; top:350px; right:50%; margin-right:-125px; }		/* 네비게이션 바 스타일 재정의, 너비와 상단과 우측으로 부터의 위치, 우측 마진 재설정 */
+	#gnb a { width:100%; background:#FFCA08; box-sizing:border-box; margin:30px 3px;  /* 네비게이션 바 내의 링크에 대한 스타일 재정의 */
+			border-radius:10px; opacity:1; color:#009223; font-size:20px; /* 너비, 배경, 박스 크기는 border-box로 설정되어 여백이 박스 크기에 포함. */
+			padding: 0px 30px;  font-weight: 700; line-height: 1.5;}							/* 여백, 테두리 반경, 투명도, 글자 색상과 크기와 두께, 패딩 재설정 */
+	#gnb a:hover { opacity:1; transform:scale(1.1); color:#fff; }		/* 네비게이션 바 내의 링크에 마우스 호버 시 적용되는 스타일 정의, 투명도가 1로 설정되어 호버 시 불투명해지며 크기 1.1배 확대, 글자색 변경됨 */
+	
+	
+	article:nth-child(1) span { display:none; }				/* 첫번째 article 요소의 자식 중 span 태그를 가진 요소들을 숨김 */
+ }

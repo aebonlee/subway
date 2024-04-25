@@ -1,0 +1,145 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>	
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />	 <!-- IE 브라우저의 호환성 모드 설정, IE-Edge 값은 최신 엔진으로 렌더링 하도록 지시 -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />	<!-- 모바일 기기에서의 뷰포트 설정 지정, 뷰포트의 너비를 화면 너비로 설정, 초기 줌 레벨을 1로 설정 -->
+	<title> SUBWAY </title> <!-- 문서의 제목을 나타냄. 브라우저의 탭에 표시되는 텍스트 -->
+	<!-- FontAwesome 및 Google Fonts 리소스 -->
+	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">	<!-- 아이콘 폰트 파일, 이 파일로 웹 페이지에서 아이콘 사용 가능 -->
+	<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500&display=swap" rel="stylesheet">	<!-- 구글 폰트 스타일 시트, 이 폰트로 웹 페이지 텍스트를 스타일링 -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@1&display=swap" rel="stylesheet">
+	<!-- 외부 스타일 시트 및 JS -->
+	<link rel="stylesheet" href="css/style.css" /> <!-- href의 경로에서 외부 스타일시트를 불러옴. 이 파일에는 웹 페이지 스타일 규칙 정의 되어 있음 -->
+	<script type="text/javascript" src="js/prefixfree.min.js"></script>
+</head>
+
+<body>
+
+	<header>		<!-- 웹 페이지 상단의 헤더 영역을 정의, 페이지 상단에 로고와 네비게이션 메뉴, 소셜미디어 아이콘 등 포함 -->
+		<h1>logo</h1>	<!-- 페이지 로고를 나타내는 태그, "logo"라는 텍스트가 들어가 있음, 실제로는 "logo" 대신에 로고 이미지를 사용하는 것이 일반적. 여기의 css에서는 text-indent:-99999px;로 텍스트를 숨김 -->
+		<ul id="gnb">		<!-- 네비게이션 메뉴, id 속성이 "gnb"로 설정 -->
+			<!-- 각 메뉴 항목은 FontAwesome 아이콘과 함께 메뉴 이름을 표시 -->
+			<li><a href="#"><i class="fa fa-bars"></i> 메뉴 소개</a></li>
+			<li><a href="#"><i class="fa fa-bullhorn"></i>새소식</a></li>
+			<li><a href="#"><i class="fa fa-map-marker"></i> 가맹점</a></li>
+			<li><a href="#"><i class="fa fa-cutlery"></i>온라인 주문</a></li>	
+		</ul>		
+
+		<div class="snsSet">	<!-- 소셜 미디어 아이콘, 소셜 미디어에 대한 링크를 나타내는 <div> 태그 -->
+			<!-- 각 소셜 미디어 아이콘은 img 태그의 src 속성을 통해 각 소셜 미디어의 아이콘 이미지를 나타냄 -->
+			<a href="#"><img src="img/sns1.png" alt="about" /></a>
+			<a href="#"><img src="img/sns2.png" alt="contact" /></a>
+			<a href="#"><img src="img/sns3.png" alt="facebook" /></a>
+			<a href="#"><img src="img/sns4.png" alt="twitter" /></a>
+			<a href="#"><img src="img/sns5.png" alt="etc" /></a>
+		</div>
+	</header>
+
+	<nav>	<!-- 웹 페이지 내에서 탐색을 위한 링크 또는 버튼을 포함하는 태그, 사용자가 해당 링크를 클릭해 추가 정보나 서비스에 접근 가능 -->
+		<!-- 각 링크는 img 태그 포함, alt 속성은 이미지의 대체 텍스트를 나타냄 -->
+		<a href="#"><img src="img/util1.png" alt="" /></a>
+		<a href="#"><img src="img/util2.png" alt="" /></a>
+		<a href="#"><img src="img/util3.png" alt="" /></a>
+		<a href="#"><img src="img/util4.png" alt="" /></a>
+	</nav>
+	
+	<section>	<!-- 웹 페이지의 메인 콘텐츠를 감싸는 컨테이너 -->
+		<article>		<!-- 그 하위에 위치한 각각의 article 요소, 각 article은 페이지의 서로 다른 섹션을 표현, 이미지와 텍스트로 구성됨-->
+			<div class="bg bg1">		<!-- 배경 이미지 정의, 각각의 <article에 다른 스타일이 적용되어 있음 -->
+				<span>SUBWAY</span>
+			</div>			
+		</article>
+		
+		<article>		
+			<div class="txt">	<!-- 텍스트 정의, HTML 태그(p, strong, em 등)를 사용하여 구조화 됨-->
+				<i class="fa fa-tags" aria-hidden="true"></i>	<!-- aria-hidden 속성은 웹 접근성을 고려하여 사용되는 속성, true로 설정이 되면 화면에 표시 x -->
+				<p>
+					<strong>Fresh Forward</strong><br />
+					<em>프레시포워드<b>(Fresh Forward)</b> 디자인은 </br>
+						고객에게 기억에 남는 써브웨이 경험을 제공합니다. </br> 고객을 환영하고, 
+						편안한 식사를 즐길 수 있는 인상적인 공간을 제공합니다.
+						</em>
+				</p>
+			</div>	
+		</article>
+		
+		<article>			
+			<div class="txt">	
+				<i class="fa fa-spin fa-refresh"></i>
+				<p><strong>Reservation</strong></p>
+			</div>	
+		</article>
+		
+		<article>
+			<div class="bg bg2">
+				<span>Fresh</span>
+			</div>	
+		</article>
+		
+		<article>
+			<div class="bg bg3">
+				<span>Morning</span>
+			</div>	
+		</article>
+		
+		<article>	
+			<div class="txt">	
+				<i class="fa fa-tags" aria-hidden="true"></i>
+				<p>
+					<strong>Our Veggies</strong><br />
+					<em> 야채들은 당일 판매되는 양만큼 준비되며 언제나 신선한 최상의 야채를</br>
+						안전하게 제공하는 것이 써브웨이의 목표입니다</em>
+				</p>
+			</div>	
+		</article>
+		
+		<article>
+			<div class="bg bg4">
+				<span>Salad</span>
+			</div>
+		</article>
+		
+		<article>	
+			<div class="txt">	
+				<i class="fa fa-tags" aria-hidden="true"></i>
+				<strong>Our Impact</strong><br />
+				<em>샐러드 보울은 <br/><b>95%</b> 재생 용기로 만들어졌으며, <br/>
+					매장 내 일회용품 사용을 줄입니다.</em>
+			</div>	
+		</article>
+		
+		<article>		
+			<div class="bg bg5">
+				<span>Sandwich</span>
+			</div>
+		</article>
+		
+		<article>	
+			<div class="bg bg6">
+				<span>Cookies</span>
+			</div>	
+		</article>
+		
+		<article>
+			<div class="txt">	
+				<i class="fa fa-tags" aria-hidden="true"></i>
+				<p>
+					<strong>Our Bread</strong><br />
+					<em>신선한 샌드위치는 </br>신선한 빵에서 시작된다는 철학으로 </br>
+						매일 최상의 빵을 제공하려 노력하고 있습니다.</em>
+				</p>
+			</div>	
+		</article>
+		
+		<article>	
+			<div class="bg bg7">
+				<span>Wrap</span>
+			</div>		
+		</article>
+	</section>	<!-- 웹 페이지의 메인 콘텐츠를 감싸는 컨테이너 끝 -->
+
+</body>
+</html>
